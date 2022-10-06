@@ -3,12 +3,16 @@
 class Solution:
     #Function to return max value that can be put in knapsack of capacity W.
     def knapSack(self,W, wt, val, N):
+        
+    
+    def runner(self,W, wt, val, N):
         if N==0 or W==0:
             return 0
+        
         if(wt[N-1]>W)  :
-            return self.knapSack(W=W,wt=wt,val=val,N=N-1)
-        return max(self.knapSack(W=W,wt=wt,val=val,N=N-1),
-                   val[N-1]+self.knapSack(W=W-wt[N-1],wt=wt,val=val,N=N-1)
+            return self.runner(W=W,wt=wt,val=val,N=N-1)
+        return max(self.runner(W=W,wt=wt,val=val,N=N-1),
+                   val[N-1]+self.runner(W=W-wt[N-1],wt=wt,val=val,N=N-1)
                    )
         
         
