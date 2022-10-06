@@ -1,5 +1,5 @@
 #User function Template for python3
-
+import itertools
 class Solution:
     #Function to return max value that can be put in knapsack of capacity W.
     def knapSack(self,W, wt, val, N):
