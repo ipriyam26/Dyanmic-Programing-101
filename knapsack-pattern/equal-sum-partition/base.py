@@ -11,8 +11,6 @@ class Solution:
             return self.subset_sum(sum_needed,n-1,wt) or self.subset_sum(sum_needed-wt[n-1],n-1,wt)
         else:
             return  self.subset_sum(sum_needed,n-1,wt) 
-    
-    def 
         
 
 if __name__ == '__main__':
