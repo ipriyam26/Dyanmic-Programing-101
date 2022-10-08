@@ -12,7 +12,7 @@ class Solution:
         else:
             return  self.subset_sum(sum_needed,n-1,wt) 
     
-    def 
+    def equal
         
 
 if __name__ == '__main__':
