@@ -25,8 +25,8 @@ class Solution:
 if __name__ == '__main__':
     test_cases = int(input())
     for _ in range(test_cases):
-        sum_needed= int(input())
+        # sum_needed= int(input())
         wt = list(map(int,input().strip().split()))
         ob=Solution()
-        print(ob.subset_sum(sum_needed=sum_needed,n=len(wt),wt=wt))
+        print(ob.canPartition(arr=wt))
 # } Driver Code Ends
