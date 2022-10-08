@@ -1,5 +1,8 @@
 #User function Template for python3
 
+from typing import List
+
+
 class Solution:
     #Function to return max value that can be put in knapsack of capacity W.
     def subset_sum(self,sum_needed,n,wt):
@@ -12,16 +15,12 @@ class Solution:
         else:
             return  self.subset_sum(sum_needed,n-1,wt) 
     
-    def equal_sum_partion(self,arr):
+    def canPartition(self,arr:List[int]) -> bool:
         sum_arr = sum(arr)/2
-        if (int(sum_arr)!=sum_arr):
-            return 0
-        if sum_arr in arr:
-            return 1
-        res = self.subset_sum(sum_arr,len(arr),arr)
-        if res:
-            return 1
-        return 0
+        if int(sum_arr)!=sum_arr or sum_arr%2==1 or sum_arr in arr:
+            return False
+        return self.subset_sum(sum_arr,len(arr),arr)
+        
         
         
 
