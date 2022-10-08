@@ -13,6 +13,10 @@ class Solution:
             return  self.subset_sum(sum_needed,n-1,wt) 
     
     def equal_sum_partion(self,arr):
+        sum_arr = sum(arr)
+        if (int(sum_arr)!=sum_arr):
+            return False
+        
         
 
 if __name__ == '__main__':
