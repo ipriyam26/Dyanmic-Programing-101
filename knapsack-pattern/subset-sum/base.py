@@ -13,9 +13,15 @@ class Solution:
             return  self.subset_sum(sum_needed,n-1,wt) 
     
     def equal_sum_partion(self,arr):
-        sum_arr = sum(arr)
+        sum_arr = sum(arr)/2
         if (int(sum_arr)!=sum_arr):
-            return False
+            return 0
+        if sum_arr in arr:
+            return 1
+        res = self.subset_sum(sum_arr,len(arr),arr)
+        if res:
+            return 1
+        return 0
         
         
 
