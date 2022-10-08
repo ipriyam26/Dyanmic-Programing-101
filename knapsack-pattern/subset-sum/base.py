@@ -12,7 +12,7 @@ class Solution:
         else:
             return  self.subset_sum(sum_needed,n-1,wt) 
     
-    def equal_sum_partion(self,)
+    def equal_sum_partion(self,arr)
         
 
 if __name__ == '__main__':
