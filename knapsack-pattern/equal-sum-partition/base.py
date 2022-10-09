@@ -8,18 +8,19 @@ class Solution:
     def subset_sum(self,sum_needed,n,wt):
         if sum_needed ==0:
             return True
-        if n==0:
+        if n == 0:
             return False
-        if sum_needed>wt[n-1]:
-            return self.subset_sum(sum_needed,n-1,wt) or self.subset_sum(sum_needed-wt[n-1],n-1,wt)
+        if wt[n-1]>sum_needed:
+            return  self.subset_sum(sum_needed,n-1,wt)
         else:
-            return  self.subset_sum(sum_needed,n-1,wt) 
+            return self.subset_sum(sum_needed,n-1,wt) or self.subset_sum(sum_needed-wt[n-1],n-1,wt)
+             
         
     def canPartition(self,arr:List[int]) -> bool:
-        sum_arr = sum(arr)/2
-        if int(sum_arr)!=sum_arr or sum_arr%2==1 or sum_arr in arr:
+        sum_arr = sum(arr)
+        if int(sum_arr/2)!=sum_arr/2 or sum_arr%2==1:
             return False
-        return self.subset_sum(sum_arr,len(arr),arr) 
+        return True if sum_arr/2 in arr else self.subset_sum(sum_arr/2,len(arr),arr) 
 
 
 if __name__ == '__main__':
