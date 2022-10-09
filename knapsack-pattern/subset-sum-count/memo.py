@@ -10,17 +10,11 @@ class Solution:
         return self.subset_sum(sum_needed=sum_needed,n=n,wt=wt)
     
     def subset_sum(self,sum_needed,n,wt):
-        if sum_needed ==0:
-            return True
-        if n==0:
-            return False
-        
+        if sum_needed ==0:return 1
+        if n==0:return 0
         if self.dp[sum_needed][n]!=None: return self.dp[sum_needed][n]
-            
-        if sum_needed>wt[n-1]:
-            self.dp[sum_needed][n] =self.subset_sum(sum_needed,n-1,wt) or self.subset_sum(sum_needed-wt[n-1],n-1,wt)
-        else:
-            self.dp[sum_needed][n]=  self.subset_sum(sum_needed,n-1,wt) 
+        if sum_needed<wt[n-1]:self.dp[sum_needed][n]=  self.subset_sum(sum_needed,n-1,wt)
+        else:self.dp[sum_needed][n] =self.subset_sum(sum_needed,n-1,wt) + self.subset_sum(sum_needed-wt[n-1],n-1,wt)
         return self.dp[sum_needed][n]
         
 
