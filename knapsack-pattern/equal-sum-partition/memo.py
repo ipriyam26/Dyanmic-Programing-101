@@ -31,6 +31,6 @@ if __name__ == '__main__':
     test_cases = int(input())
     for _ in range(test_cases):
         wt = list(map(int,input().strip().split()))
-
+        ob.
         print(ob.launch(wt))
 # } Driver Code Ends
