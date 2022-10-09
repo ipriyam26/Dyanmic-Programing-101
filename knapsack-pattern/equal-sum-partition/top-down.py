@@ -26,11 +26,11 @@ class Solution:
             return True
         return self.subset_sum(int(sum_arr/2),len(arr),arr)
 
-if __name__ == '__main__':
-    test_cases = int(input())
-    for _ in range(test_cases):
-        sum_needed= int(input())
-        wt = list(map(int,input().strip().split()))
-        ob=Solution()
-        print(ob.launch(sum_needed=sum_needed,n=len(wt),wt=wt))
+# if __name__ == '__main__':
+#     test_cases = int(input())
+#     for _ in range(test_cases):
+#         sum_needed= int(input())
+#         wt = list(map(int,input().strip().split()))
+#         ob=Solution()
+#         print(ob.launch(sum_needed=sum_needed,n=len(wt),wt=wt))
 # } Driver Code Ends
