@@ -15,7 +15,7 @@ class Solution:
         
         return self.subset_sum(sum_needed,n-1,wt) + self.subset_sum(sum_needed-wt[n-1],n-1,wt)
     
-    def runner(self,)
+    def runner(self,arr:)
              
         
         
