@@ -5,6 +5,11 @@ from typing import List
 
 class Solution:
     #Function to return max value that can be put in knapsack of capacity W.
+
+    def runner(self,arr:List[int],diff:int):
+        to_be_found = (sum(arr)+diff)/2
+        return self.launch(to_be_found,len(arr),arr)
+    
     def launch(self,sum_needed,n,wt):
         self.dp= [[None for _ in range(sum_needed+1)] for _ in range(n+1)]
         return self.subset_sum(sum_needed=sum_needed,n=n,wt=wt)
