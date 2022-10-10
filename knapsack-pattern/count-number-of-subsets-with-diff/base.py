@@ -18,6 +18,7 @@ class Solution:
     
     def runner(self,arr:List[int],diff:int):
         to_be_found = (sum(arr)+diff)/2
+        return self.subset_sum(to_be_found,len(arr),arr)
         
              
         
