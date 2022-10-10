@@ -5,7 +5,9 @@ from typing import List
 
 
 class Solution:
-
+    def runner(self,arr:List[int],diff:int):
+        to_be_found = (sum(arr)+diff)/2
+        return self.subset_sum(to_be_found,len(arr),arr)
     
     def subset_sum(self,sum_needed,n,wt):
         dp= [[None for _ in range(sum_needed+1)] for _ in range(n+1)]
