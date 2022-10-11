@@ -13,7 +13,10 @@ class Solution:
         if(sum_needed<wt[n-1]):
             return self.subset_sum(sum_needed=sum_needed,n=n-1,wt=wt)
         
-        return self.subset_sum(sum_needed,n-1,wt) + self.subset_sum(sum_needed-wt[n-1],n-1,wt)
+        return self.subset_sum(sum_needed,n-1,wt) + self.subset_sum(sum_needed-wt[n-1],n,wt)
+    
+    def count(self, coins, N, sum):
+        return self.subset_sum(sum,N,coins)
              
         
         
