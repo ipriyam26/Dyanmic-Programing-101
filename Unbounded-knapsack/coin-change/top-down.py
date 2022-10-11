@@ -16,9 +16,12 @@ class Solution:
             dp[i][0]=1
 
         for i, j in itertools.product(range(1,n+1), range(1,sum_needed+1)):
-            dp[i][j] = dp[i-1][j] if j > wt[i-1] else dp[i-1][j] + dp[i-1][j-wt[i-1]]
+            dp[i][j] = dp[i-1][j] if j > wt[i-1] else dp[i-1][j] + dp[i][j-wt[i-1]]
             
         return dp[i][j]
+
+    def count(self, coins, N, sum):
+        return self.subset_sum(sum,N,coins)
 
 if __name__ == '__main__':
     test_cases = int(input())
