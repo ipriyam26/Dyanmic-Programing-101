@@ -18,7 +18,6 @@ class Solution:
         
     def targetSum(self,arr: List[int],target:int,n:int):
         self.target = target
-        self.sum_arr = sum(arr)
         self.hash = {}
         self.runner(arr,0,len(arr))
         
