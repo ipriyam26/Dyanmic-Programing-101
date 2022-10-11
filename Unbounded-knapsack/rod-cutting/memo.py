@@ -20,6 +20,10 @@ class Solution:
                    val[N-1]+self.runner(W=W-wt[N-1],wt=wt,val=val,N=N)
                    )
         return self.dp[N][W]
+    
+    def cutRod(self, price, n):
+        wt = list(range(1,n+1))
+        return self.knapSack(n,wt,price,n)
 
         # code here
 
