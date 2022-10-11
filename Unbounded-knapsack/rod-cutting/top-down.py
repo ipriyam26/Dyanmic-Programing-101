@@ -14,7 +14,9 @@ class Solution:
         for i, j in itertools.product(range(1,N+1), range(1,W+1)):
             dp[i][j] = dp[i - 1][j] if (wt[i - 1] > j) else max(dp[i - 1][j], val[i - 1] + dp[i][j - wt[i - 1]])
         return dp[N][W]
-        
+    def cutRod(self, price, n):
+        wt = list(range(1,n+1))
+        return self.knapSack(n,wt,price,n)  
         
 
 if __name__ == '__main__':
