@@ -19,6 +19,7 @@ class Solution:
         
     
     def longestCommonSubsequence(self, text1: str, text2: str) -> int:
+        
         return self.lcs(t1=text1,t2=text2,n=len(text1),m=len(text2))
 
 if __name__ == "__main__":
