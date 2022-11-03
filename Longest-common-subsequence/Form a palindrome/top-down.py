@@ -33,16 +33,16 @@ class Solution:
  # Driver Code Starts
 #Initial Template for Python 3
 
-if __name__ == '__main__':
+# if __name__ == '__main__':
 
-    t = int(input())
+#     t = int(input())
 
-    for _ in range(t):
-        Str = input()
+#     for _ in range(t):
+#         Str = input()
         
 
-        solObj = Solution()
+#         solObj = Solution()
 
-        print(solObj.countMin(Str))
+#         print(solObj.countMin(Str))
 # } Driver Code Ends
     
