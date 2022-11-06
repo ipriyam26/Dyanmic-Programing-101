@@ -26,4 +26,4 @@ class Solution:
 
 if __name__ == "__main__":
     sol = Solution()
-    print(sol.minDistance("horse","ros"))
+    print(sol.minDistance("geek","gesek"))
