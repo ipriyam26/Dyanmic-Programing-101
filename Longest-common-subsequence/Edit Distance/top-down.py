@@ -31,4 +31,4 @@ class Solution:
 
 if __name__ == "__main__":
     sol = Solution()
-    print(sol.minDistance("gf","fgg"))
+    print(sol.minDistance("geek","gesek"))
