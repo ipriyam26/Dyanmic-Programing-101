@@ -30,4 +30,4 @@ class Solution:
 
 if __name__ == "__main__":
     sol = Solution()
-    print(sol.minDistance("gfg","fgg"))
+    print(sol.minDistance("gf","fgg"))
