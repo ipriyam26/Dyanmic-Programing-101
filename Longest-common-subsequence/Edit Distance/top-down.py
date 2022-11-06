@@ -1,34 +1,22 @@
-import itertools
-
-
+# @lc code=start
 class Solution:
-    def longestCommonSubsequence(self, text1: str, text2: str) -> int:
-        m=len(text2)
-        n = len(text1)
-        self.dp = [[ -1 for _ in range(m+1)] for _ in range(n+1)]
-        for i in range (n+1):
-            self.dp[i][0]=0
-
-        for j in range(m+1):
-            self.dp[0][j] =0
-
-        i,j=0,0
-        for i, j in itertools.product(range(1,n+1), range(1,m+1)):
-            if text1[i-1] == text2[j-1]:
-                self.dp[i][j] = self.dp[i - 1][j - 1] +1 
-            else:
-                self.dp[i][j]=max(self.dp[i - 1][j], self.dp[i][j - 1])
-
-        return self.dp[n][m]
-    
+        
     def minDistance(self, word1: str, word2: str) -> int:
-        lcs = self.longestCommonSubsequence(word1,word2)
-        # if lcs == len(word1):
-            
-        #     return len(word2)-lcs
-        # else:
-        return len(word1)-lcs + abs(len(word1)-len(word2))
-
-if __name__ == "__main__":
-    sol = Solution()
-    print(sol.minDistance("geek","geseek"))
+        self.dp = [[0 for _ in range(len(word2)+1)] for _ in range(len(word1)+1)]
+        
+        n,m = len(word1),len(word2)
+        for j in range(m):
+            self.dp[0][j]=j
+        for i in range(n):
+            self.dp[i][0]=i
+        
+        self.dp[0][0]=0
+        for i in range(1,n+1):
+            for j in range(1,m+1):
+                if word1[i-1] == word2[j-1]:
+                    self.dp[i][j] = self.dp[i-1][j-1]
+                else:
+                    self.dp[i][j] = 1+ min( self.dp[i-1][j],self.dp[i][j-1], self.dp[i-1][j-1])
+        print(self.dp)
+        return self.dp[n][m]
+        
