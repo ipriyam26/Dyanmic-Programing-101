@@ -22,7 +22,11 @@ class Solution:
         return self.dp[n][m]
     
     def minDistance(self, word1: str, word2: str) -> int:
-        return len(word1)- self.longestCommonSubsequence(word1,word2)
+        lcs = self.longestCommonSubsequence(word1,word2)
+        if lcs == len(word1):
+            return len(word2)-lcs
+        else:
+            return len(word1)-lcs
 
 if __name__ == "__main__":
     sol = Solution()
